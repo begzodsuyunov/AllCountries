@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allCountriesFragment">
+
+    <fragment
+        android:id="@+id/allCountriesFragment"
+        tools:layout="@layout/fragment_all_countries"
+        android:name="com.example.allcountries.presentation.fragments.allCountries.AllCountriesFragment"
+        android:label="AllCountriesFragment" >
+        <action
+            android:id="@+id/action_allCountriesFragment_to_countryInfoFragment"
+            app:destination="@id/countryInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryInfoFragment"
+        android:name="com.example.allcountries.presentation.fragments.countryInfo.CountryInfoFragment"
+        android:label="fragment_country_info"
+        tools:layout="@layout/fragment_country_info" >
+        <argument
+            android:name="data"
+            app:argType="com.example.allcountries.data.source.remote.dto.response.GetAllResponseItem" />
+    </fragment>
+</navigation>
